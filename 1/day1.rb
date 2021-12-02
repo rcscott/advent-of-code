@@ -1,4 +1,4 @@
-measurements = File.open("day1_input.txt").readlines.map(&:chomp).map(&:to_i)
+measurements = File.open("input.txt").readlines.map(&:chomp).map(&:to_i)
 
 # Part 1 - count number of increases
 puts "### Part 1: ###"
