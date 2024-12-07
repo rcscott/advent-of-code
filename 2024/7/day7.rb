@@ -13,7 +13,12 @@ def evaluate_possibilities(test_value, nums, allow_concat: false)
   end
 
   combinations.map do |new_num|
-    evaluate_possibilities(test_value, [new_num] + remaining_nums, allow_concat:)
+    if new_num > test_value
+      # Assumes there are no negative numbers
+      false
+    else
+      evaluate_possibilities(test_value, [new_num] + remaining_nums, allow_concat:)
+    end
   end.flatten.any?
 end
 
